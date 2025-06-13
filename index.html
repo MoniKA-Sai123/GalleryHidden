@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Hide App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+ <img id="m" src="https://th.bing.com/th?id=OIP.i-U0e0kt7F8sy6pzFWdfRgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2" alt="icon" >
+ <p id="p" style="color:aliceblue">Pin-pointer</p>
+  <br>
+  
+      
+  
+    <!-- Registration Form -->
+    <div id="Registration-form">
+        <h2>Register</h2>
+        <input type="text" id="newUserId" placeholder="Enter User ID">
+      <br>
+      <br>
+        <input type="password" id="newPassword" placeholder="Enter Password">
+      <br> 
+      <br>
+        <input type="text" id="mobileNumber" placeholder="Enter Mobile Number">
+      <br>
+      <br>
+        <button id="r" onclick="registerUser()">Register</button>
+        <p style="color:lightblue; cursor:pointer;" onclick="showLoginForm()">Already have an account? Login here</p>
+
+  </div>
+
+    <!-- Login Form -->
+    <div id="login-form" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="userId" placeholder="Enter User ID">
+      <br>
+      <br>
+        <input type="password" id="password" placeholder="Enter Password">
+      <br>
+      <br>
+        <button id="l" onclick="validateUser()">Login</button>
+        <p id="forgot-password" style="text-color:blue"onclick="showForgotPasswordForm()">Forgot Password?</p>
+  <p style="color:lightblue; cursor:pointer;" onclick="showRegisterForm()">Don't have an account? Register here</p>
+
+      </div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgot-password-form" style="display: none;">
+        <h2>Forgot Password</h2>
+        <input type="text" id="forgotMobileNumber" placeholder="Enter Mobile Number">
+        <button onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <!-- OTP Verification Form -->
+    <div id="otp-form" style="display: none;">
+        <h2>Verify OTP</h2>
+        <input type="text" id="otpInput" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <!-- Reset Password Form -->
+    <div id="reset-password-form" style="display: none;">
+        <h2>Reset Password</h2>
+        <input type="password" id="newPasswordReset" placeholder="Enter New Password">
+        <button onclick="resetPassword()">Reset Password</button>
+    </div>
+
+    <!-- Photo Selection -->
+    <div id="photo-selection" style="display: none;">
+        <h2>Select Photos to Hide</h2>
+        <input type="file" id="photoInput" multiple>
+      <br>
+      <br>
+      <br>
+        <button  id="b" onclick="hidePhotos()">Hide Selected Photos</button>
+        <button id="s" onclick="showHiddenPhotos()">Show Hidden Photos</button>
+    </div>
+
+    <!-- Hidden Photos Section -->
+    <div id="hidden-photos" style="display: none;">
+        <h2>Hidden Photos</h2>
+        <div id="photosContainer"></div>
+    </div>
+    
+  
+    <script src="pro.js"></script>
+</body>
+</html>
