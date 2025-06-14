@@ -1,0 +1,276 @@
+/*body {
+  font-family: Arial, sans-serif;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e)
+}
+
+#registration-form, #login-form, #forgot-password-form, #otp-form, #reset-password-form, #photo-selection{
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 500px;
+  height:300px;
+  text-align: center;
+}
+
+.hidden-photo {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  display: inline-block;
+}
+#newUserId ,#newPassword,#mobileNumber,#userId,#password{
+width:300px;
+height:30px;
+}
+#r{
+width:150px;
+height:30px;
+background-color:orange;
+}
+#m{
+width:60px;
+}
+#l{
+width:150px;
+height:30px;
+background-color:orange
+}
+#p{
+font-style:bold;
+font-size:50px;
+stop-color:white;
+}
+#b{
+width:150px;
+height:35px;
+}
+#s{
+width:150px;
+height:35px;
+}
+#hidden-photos{
+width:1000px;
+height:500px;
+background-img:url("https://t3.ftcdn.net/jpg/04/42/47/52/360_F_442475292_5ouemiiJiArGyNKSWgUpkRR8lmep6jgM.jpg");
+background-color:white;
+}*/
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #f7f7f7;
+}
+
+/* Logo and Header */
+#m {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+}
+
+#p {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Shared Box Styling for Forms */
+form, 
+#Registration-form, 
+#login-form, 
+#forgot-password-form, 
+#otp-form, 
+#reset-password-form, 
+#photo-selection, 
+#hidden-photos {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+input[type="file"] {
+  background-color: #fff;
+  color: #000;
+}
+
+input[type="submit"],
+button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff8800;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #ff6600;
+}
+
+/* Links / prompts */
+p[style*="cursor:pointer"] {
+  margin-top: 10px;
+  color: #9fdfff !important;
+  text-decoration: underline;
+}
+
+/* Hidden photos styling */
+#hidden-photos {
+  max-width: 1000px;
+  padding: 20px;
+}
+
+#photosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hidden-photo {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media screen and (max-width: 480px) {
+  #p {
+    font-size: 28px;
+  }
+
+  input[type="submit"],
+  button,
+  input[type="text"],
+  input[type="password"],
+  input[type="file"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  form, 
+  #Registration-form, 
+  #login-form, 
+  #forgot-password-form, 
+  #otp-form, 
+  #reset-password-form, 
+  #photo-selection, 
+  #hidden-photos {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .hidden-photo {
+    width: 100px;
+  }
+}
+/* Style for hidden photo gallery */
+.hidden-photo {
+  width: 150px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hidden-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+#photosContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.hidden-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.hidden-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+#photosContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+/* .hidden-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+} */
+
+.hidden-photo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+
